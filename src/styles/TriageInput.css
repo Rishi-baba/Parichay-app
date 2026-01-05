@@ -1,0 +1,116 @@
+.triage-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.input-box-container {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.416);
+    position: relative;
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.3s ease;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-box-container:focus-within {
+    box-shadow: 0 15px 50px -10px rgba(0, 0, 0, 0.12);
+    border-color: #e0e0e0;
+}
+
+.triage-textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: var(--text-main);
+    outline: none;
+    min-height: 80px;
+}
+
+.triage-textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.input-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.file-btn {
+    background-color: #f5f5f5;
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.file-btn:hover {
+    background-color: #eeeeee;
+}
+
+.send-btn {
+    background-color: #f0f0f0;
+    color: #ccc;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.send-btn.active {
+    background-color: var(--text-main);
+    color: #fff;
+}
+
+.send-btn.active:hover {
+    transform: scale(1.1);
+    background-color: #000;
+}
+
+.suggestions-section {
+    text-align: center;
+}
+
+.suggestions-label {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.suggestion-chip {
+    background-color: #111;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.suggestion-chip:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

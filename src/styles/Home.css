@@ -1,0 +1,42 @@
+.home-page {
+    padding-top: 60px;
+    padding-bottom: 100px;
+    text-align: center;
+    /* Add subtle clouds background effect if possible later */
+    min-height: calc(100vh - var(--header-height));
+}
+
+.used-for-badge {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 6px 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    /* border: 1px solid #eee; */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 48px;
+}
+
+.triage-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
