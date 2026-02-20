@@ -53,7 +53,7 @@ const LawyerProfile = () => {
                 <div className="profile-actions-sidebar">
                     <div className="action-box">
                         <button className="btn-primary-lg full-width">Request Consultation</button>
-                        <button className="btn-secondary-lg full-width mt-2">
+                        <button className="btn-secondary-lg full-width mt-2" onClick={() => navigate('/lawyer-chat', { state: { lawyer } })}>
                             <MessageSquare size={18} /> Start Anonymous Chat
                         </button>
                         <p className="availability-text">

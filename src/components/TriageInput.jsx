@@ -17,12 +17,13 @@ const TriageInput = () => {
     const navigate = useNavigate();
 
     const handleSuggestionClick = (text) => {
-        setInputText(text);
+        // Navigate immediately to chat with the suggestion as the initial message
+        navigate('/chat', { state: { message: text } });
     };
 
     const handleSend = () => {
         if (!inputText.trim()) return;
-        navigate('/triage', { state: { issue: inputText } });
+        navigate('/chat', { state: { message: inputText } });
     };
 
     return (
@@ -32,7 +33,8 @@ const TriageInput = () => {
                     className="triage-textarea"
                     placeholder="Describe your issue in simple words... for example: My employer didn't pay my salary"
                     value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
+                    onFocus={() => navigate('/chat')}
+                    readOnly={true} // Prevent typing on landing page, just trigger navigation
                 />
 
                 <div className="input-actions">

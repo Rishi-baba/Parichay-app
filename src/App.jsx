@@ -12,6 +12,8 @@ import LawyerDashboard from './pages/LawyerDashboard';
 import FindLawyer from './pages/FindLawyer';
 import LawyerProfile from './pages/LawyerProfile';
 import HowItWorks from './pages/HowItWorks';
+import ChatPage from './pages/ChatPage';
+import LawyerChat from './pages/LawyerChat';
 
 // Simple placeholders for now
 // const FindLawyer = () => <div className="container" style={{ padding: '40px' }}><h1>Find a Lawyer</h1><p>Coming soon...</p></div>;
@@ -31,6 +33,8 @@ function App() {
           <Route path="find-lawyer" element={<FindLawyer />} />
           <Route path="lawyer-profile" element={<LawyerProfile />} />
           <Route path="how-it-works" element={<HowItWorks />} />
+          <Route path="chat" element={<ChatPage />} />
+          <Route path="lawyer-chat" element={<LawyerChat />} />
         </Route>
       </Routes>
     </BrowserRouter>

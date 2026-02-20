@@ -14,7 +14,7 @@ const TriageResult = () => {
                 <div className="result-badge">TRIAGE COMPLETE</div>
                 <h1>Here's what you can do.</h1>
                 <p className="issue-summary">
-                    Based on your issue: <strong>"{issue}"</strong>
+                    <strong>Based on your issue:</strong>
                 </p>
             </div>
 

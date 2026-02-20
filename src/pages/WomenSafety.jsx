@@ -43,8 +43,6 @@ const WomenSafety = () => {
                     </div>
                 </div>
             </div>
-
-
         </div>
     );
 };

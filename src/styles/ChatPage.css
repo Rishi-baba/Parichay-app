@@ -1,0 +1,432 @@
+/* Main Layout */
+.chat-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #333;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.chat-sidebar {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.sidebar-section h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Sidebar Cards */
+.sidebar-card,
+.action-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sidebar-card:hover,
+.action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.card-row .label {
+    color: #666;
+}
+
+.card-row .value {
+    font-weight: 600;
+    color: #000;
+}
+
+.value.risk-medium {
+    color: #d97706;
+    /* Amber for medium risk */
+    background: #fef3c7;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.edit-details-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-details-btn:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+/* Next Actions */
+.action-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.action-card .icon {
+    font-size: 1.2rem;
+    background: #f3f3f3;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.action-info h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.action-info p {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Main Content */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+}
+
+/* Top Bar */
+.chat-topbar {
+    height: 60px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    flex-shrink: 0;
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.9rem;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    /* Green */
+    border-radius: 50%;
+}
+
+.status-text {
+    font-weight: 500;
+    color: #374151;
+}
+
+.divider {
+    color: #e5e5e5;
+}
+
+.case-status {
+    color: #6b7280;
+}
+
+.case-status strong {
+    color: #111;
+}
+
+.lang-toggle {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    color: #555;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.private-badge {
+    background: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.exit-btn {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.exit-btn:hover {
+    background-color: #fca5a5;
+    border-color: #f87171;
+    color: #7f1d1d;
+}
+
+/* Messages Area - ChatGPT Style */
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+}
+
+.messages-wrapper {
+    width: 100%;
+    max-width: 800px;
+    /* Limits reading width */
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.message-row {
+    display: flex;
+    width: 100%;
+}
+
+.message-row.user {
+    justify-content: flex-end;
+}
+
+.message-row.bot {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 85%;
+    display: flex;
+    gap: 16px;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.message-row.user .message-bubble {
+    background-color: #f4f4f4;
+    padding: 12px 20px;
+    border-radius: 24px;
+    border-top-right-radius: 4px;
+    /* Subtle visual cue for user */
+}
+
+.message-row.bot .message-bubble {
+    background: transparent;
+    /* Bot messages just look like text usually, or minimal */
+    /* Or we can style them like cards if prefered, but "ChatGPT style" usually means text flow for bot */
+    width: 100%;
+}
+
+.bot-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #10a37f;
+    /* OpenAI Green-ish or Brand Color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.message-text {
+    padding-top: 4px;
+    /* Align with avatar */
+}
+
+/* Typing Indicator */
+.typing-dots {
+    display: flex;
+    gap: 4px;
+    padding: 8px 0;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Input Area - Fixed Bottom */
+.input-container {
+    padding: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 20%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    resize: none;
+    max-height: 200px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 4px 8px;
+    min-height: 24px;
+}
+
+.send-icon-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.send-icon-btn:disabled {
+    background: #e5e5e5;
+    cursor: default;
+}
+
+.bottom-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.submit-problem-link {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #ccc;
+    transition: color 0.2s;
+}
+
+.submit-problem-link:hover {
+    color: #000;
+    text-decoration-color: #000;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chat-sidebar {
+        display: none;
+        /* Hide sidebar on small screens for now or make collapsible */
+    }
+
+    .chat-topbar {
+        padding: 0 16px;
+    }
+
+    .messages-wrapper {
+        padding: 0 16px;
+    }
+}
