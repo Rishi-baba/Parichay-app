@@ -38,6 +38,6 @@ const ConnectWalletButton = ({ onConnect }) => {
             {connecting ? 'Connecting...' : 'Connect Wallet'}
         </button>
     );
-};
-
+};  
+    
 export default ConnectWalletButton;
