@@ -10,7 +10,7 @@ const ActionCard = ({ title, description, onClick }) => {
                 <p className="action-card-desc">{description}</p>
             </div>
             <div className="action-card-icon">
-                <ChevronRight color="#ff5722" size={24} />
+                <ChevronRight color="#ff5721" size={24} />
             </div>
         </div>
     );
